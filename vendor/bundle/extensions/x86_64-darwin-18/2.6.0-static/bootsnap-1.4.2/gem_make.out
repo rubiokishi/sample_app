@@ -1,0 +1,15 @@
+current directory: /Users/rubio/Documents/sample_app/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+/Users/rubio/.rbenv/versions/2.6.1/bin/ruby -I /Users/rubio/.rbenv/versions/2.6.1/lib/ruby/2.6.0 -r ./siteconf20190405-17935-1pn5sa.rb extconf.rb
+creating Makefile
+
+current directory: /Users/rubio/Documents/sample_app/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/rubio/Documents/sample_app/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/rubio/Documents/sample_app/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20190405-17935-181lwkz/bootsnap
