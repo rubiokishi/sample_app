@@ -7716,3 +7716,661 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 166ms (Views: 114.9ms | ActiveRecord: 2.9ms)
 
 
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddResetToUsers (20190409122122)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_digest" varchar[0m
+  ↳ db/migrate/20190409122122_add_reset_to_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_sent_at" datetime[0m
+  ↳ db/migrate/20190409122122_add_reset_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190409122122"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-04-09 21:40:56 +0900
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (858.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (159.1ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+Completed 500 Internal Server Error in 1057ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/rubio/Documents/sample_app/app/models/user.rb:66: syntax error, unexpected end-of-input, expecting end):
+  
+app/models/user.rb:66: syntax error, unexpected end-of-input, expecting end
+app/helpers/sessions_helper.rb:18:in `current_user'
+app/helpers/sessions_helper.rb:29:in `logged_in?'
+app/views/layouts/_header.html.erb:8:in `_app_views_layouts__header_html_erb__655279510925243517_70145567819520'
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3374418018009486431_70145587589260'
+Started GET "/" for ::1 at 2019-04-09 21:41:20 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_head.html.erb (85.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18
+  Rendered layouts/_header.html.erb (38.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 144ms (Views: 138.8ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-04-09 21:41:24 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5lfR4ACYXBnIhlcKdKNWKV4gxD84d/xKbG000OhNYQ2FNx9+/Mg7lxwBEKj9MrJFgHf/WGn4RvNwFgOGDGBtrw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/
+Completed 302 Found in 37ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2019-04-09 21:41:24 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (74.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (142.4ms)
+  Rendered layouts/_header.html.erb (7.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 239ms (Views: 237.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-04-09 21:41:26 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (86.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (78.0ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 183ms (Views: 178.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for ::1 at 2019-04-09 21:41:28 +0900
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (38.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for ::1 at 2019-04-09 21:41:45 +0900
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pMjFf+vj89zUxc1glL8qWAlcfGwj/uTaPTeZE7bkEUs9k81imNoMkr9HtscZrJbppasvSYm6wOVR3xvt/gQksg==", "password_reset"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "example@exmaple.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (50.5ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 65ms (Views: 62.3ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+Started POST "/password_resets" for ::1 at 2019-04-09 21:42:58 +0900
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FM1sLWMR1FbqZjZSGh+D7AdKQ0fWxV9QmR6seFwAqV53raKzn0Gz2D7hcfCTjmeA2R14IIdK5emFZZsuuC2l/A==", "password_reset"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:49
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "reset_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_digest", "$2a$10$rSYQ80BL09Kt/aOOt/xiBeXSB9QstkPRgJwXnj40uCugDb/BUIS3O"], ["updated_at", "2019-04-09 12:42:58.827081"], ["id", 101]]
+  ↳ app/models/user.rb:49
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:49
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 4.1ms)
+
+
+  
+NoMethodError (undefined method `reset_semt_at=' for #<User:0x00007f9813186b60>
+Did you mean?  reset_sent_at=
+               reset_sent_at
+               reset_sent_at?):
+  
+app/models/user.rb:50:in `create_reset_digest'
+app/controllers/password_resets_controller.rb:8:in `create'
+Started GET "/password_resets" for ::1 at 2019-04-09 21:43:21 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/password_resets"):
+  
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+vendor/bundle/gems/web-console-3.7.0/lib/web_console/middleware.rb:135:in `call_app'
+vendor/bundle/gems/web-console-3.7.0/lib/web_console/middleware.rb:30:in `block in call'
+vendor/bundle/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `catch'
+vendor/bundle/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+vendor/bundle/gems/railties-5.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+vendor/bundle/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `block in call'
+vendor/bundle/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+vendor/bundle/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+vendor/bundle/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+vendor/bundle/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `call'
+vendor/bundle/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+vendor/bundle/gems/rack-2.0.7/lib/rack/method_override.rb:22:in `call'
+vendor/bundle/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/gems/activesupport-5.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/static.rb:127:in `call'
+vendor/bundle/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/gems/railties-5.2.3/lib/rails/engine.rb:524:in `call'
+vendor/bundle/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/password_resets" for ::1 at 2019-04-09 21:43:29 +0900
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6s4xid9pZJ9D4wKeOdv7GDVSZtT0UekAxVrMTJF9nNeJrv8XIzkDEZdkRTywSh906wVds6XeU7nZIfsadVCQdQ==", "password_reset"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:49
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "reset_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_digest", "$2a$10$d.0sA22uc0JdxnkVPe7fXuQ2jQvvVsDnUQSa5f62oiO2dwAXh6GSO"], ["updated_at", "2019-04-09 12:43:29.231816"], ["id", 101]]
+  ↳ app/models/user.rb:49
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:50
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "reset_sent_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-04-09 12:43:29.236735"], ["reset_sent_at", "2019-04-09 12:43:29.235885"], ["id", 101]]
+  ↳ app/models/user.rb:50
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:50
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 5.7ms)
+
+
+  
+NoMethodError (private method `send_password_reset_email' called for #<User:0x00007f9812f21190>):
+  
+app/controllers/password_resets_controller.rb:9:in `create'
+Started POST "/password_resets" for ::1 at 2019-04-09 21:44:15 +0900
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6s4xid9pZJ9D4wKeOdv7GDVSZtT0UekAxVrMTJF9nNeJrv8XIzkDEZdkRTywSh906wVds6XeU7nZIfsadVCQdQ==", "password_reset"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:49
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "reset_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_digest", "$2a$10$edh28vTOm1Sri2jwpLx9g.NDtaWjgWrCFNW2NvGLOzJsplcp95Xjm"], ["updated_at", "2019-04-09 12:44:15.998994"], ["id", 101]]
+  ↳ app/models/user.rb:49
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:50
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "reset_sent_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-04-09 12:44:16.005852"], ["reset_sent_at", "2019-04-09 12:44:16.005164"], ["id", 101]]
+  ↳ app/models/user.rb:50
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:50
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 8.6ms)
+
+
+  
+NoMethodError (private method `send_password_reset_email' called for #<User:0x00007f9813d75958>):
+  
+app/controllers/password_resets_controller.rb:9:in `create'
+Started POST "/password_resets" for ::1 at 2019-04-09 21:45:34 +0900
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6s4xid9pZJ9D4wKeOdv7GDVSZtT0UekAxVrMTJF9nNeJrv8XIzkDEZdkRTywSh906wVds6XeU7nZIfsadVCQdQ==", "password_reset"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:49
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "reset_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_digest", "$2a$10$n4pTUp0VYaia0L8acJvoBuG44BWSJNaFK78nvR6etnMA3/9tPjMdu"], ["updated_at", "2019-04-09 12:45:34.442235"], ["id", 101]]
+  ↳ app/models/user.rb:49
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:50
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "reset_sent_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-04-09 12:45:34.447876"], ["reset_sent_at", "2019-04-09 12:45:34.447109"], ["id", 101]]
+  ↳ app/models/user.rb:50
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:50
+UserMailer#password_reset: processed outbound mail in 0.7ms
+Completed 500 Internal Server Error in 324ms (ActiveRecord: 8.4ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/mailers/user_mailer.rb:18:in `password_reset'
+app/models/user.rb:54:in `send_password_reset_email'
+app/controllers/password_resets_controller.rb:9:in `create'
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+Started GET "/rails/mailers/user_mailer/password_reset" for ::1 at 2019-04-09 21:57:33 +0900
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/password_reset"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/user_mailer_preview.rb:13
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (2.2ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.8ms)
+UserMailer#password_reset: processed outbound mail in 79.4ms
+  Rendering vendor/bundle/gems/railties-5.2.3/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered vendor/bundle/gems/railties-5.2.3/lib/rails/templates/rails/mailers/email.html.erb (13.3ms)
+Completed 200 OK in 187ms (Views: 16.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset?part=text%2Fhtml" for ::1 at 2019-04-09 21:57:33 +0900
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/password_reset"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/user_mailer_preview.rb:13
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (1.4ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (1.1ms)
+UserMailer#password_reset: processed outbound mail in 25.7ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 38ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset?part=text%2Fplain&locale=en" for ::1 at 2019-04-09 21:57:38 +0900
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "locale"=>"en", "path"=>"user_mailer/password_reset"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/user_mailer_preview.rb:13
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (1.2ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.8ms)
+UserMailer#password_reset: processed outbound mail in 22.5ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 31ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset.txt?part=text%2Fhtml&locale=en" for ::1 at 2019-04-09 21:57:41 +0900
+Processing by Rails::MailersController#preview as TEXT
+  Parameters: {"part"=>"text/html", "locale"=>"en", "path"=>"user_mailer/password_reset"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/user_mailer_preview.rb:13
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (1.1ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.5ms)
+UserMailer#password_reset: processed outbound mail in 21.1ms
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/password_resets" for ::1 at 2019-04-09 21:58:52 +0900
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6s4xid9pZJ9D4wKeOdv7GDVSZtT0UekAxVrMTJF9nNeJrv8XIzkDEZdkRTywSh906wVds6XeU7nZIfsadVCQdQ==", "password_reset"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:49
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "reset_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_digest", "$2a$10$jHK03lzfjA8MLAoblJyeO.a8q9XM61dcH6NMYqSunqKP5al3sJMwG"], ["updated_at", "2019-04-09 12:58:52.282972"], ["id", 101]]
+  ↳ app/models/user.rb:49
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:50
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "reset_sent_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-04-09 12:58:52.288463"], ["reset_sent_at", "2019-04-09 12:58:52.287852"], ["id", 101]]
+  ↳ app/models/user.rb:50
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:50
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.8ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.5ms)
+UserMailer#password_reset: processed outbound mail in 14.6ms
+Sent mail to nogizaka46@example.com (12.2ms)
+Date: Tue, 09 Apr 2019 21:58:52 +0900
+From: noreply@example.com
+To: nogizaka46@example.com
+Message-ID: <5cac970c4b8b6_17d43fcc09506738479d3@rubionoMacBook-Air.local.mail>
+Subject: Password reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5cac970c4a24e_17d43fcc0950673847875";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5cac970c4a24e_17d43fcc0950673847875
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset your password click the link below:
+
+http://localhost:3000/password_resets/rN_rgzp_--N-ZSq_Ttu9uQ/edit?email=nogizaka46%40example.com
+
+This link will expire in two hours.
+
+If you did not request your password to be reset, please ignore this email and 
+your password will stay as it is.
+
+----==_mimepart_5cac970c4a24e_17d43fcc0950673847875
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Password reset</h1>
+
+<p>To reset your password click the link below:</p>
+
+<a href="http://localhost:3000/password_resets/rN_rgzp_--N-ZSq_Ttu9uQ/edit?email=nogizaka46%40example.com">Reset password</a>
+
+<p>This link will expire in two hours.</p>
+
+<p>
+If you did not request your password to be reset, please ignore this email and
+your password will stay as it is.
+</p>
+  </body>
+</html>
+
+----==_mimepart_5cac970c4a24e_17d43fcc0950673847875--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 113ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2019-04-09 21:58:52 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (104.8ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 130ms (Views: 127.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/rN_rgzp_--N-ZSq_Ttu9uQ/edit?email=nogizaka46%40example.co" for ::1 at 2019-04-09 22:16:56 +0900
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"nogizaka46@example.co", "id"=>"rN_rgzp_--N-ZSq_Ttu9uQ"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.co"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:27
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-04-09 22:16:56 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (103.7ms)
+  Rendered layouts/_header.html.erb (6.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 133ms (Views: 129.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/rN_rgzp_--N-ZSq_Ttu9uQ/edit?email=nogizaka46%40example.com" for ::1 at 2019-04-09 22:17:01 +0900
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"nogizaka46@example.com", "id"=>"rN_rgzp_--N-ZSq_Ttu9uQ"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:27
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.2ms)
+  Rendered password_resets/edit.html.erb within layouts/application (459.8ms)
+Completed 500 Internal Server Error in 631ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `email' for #<#<Class:0x00007f9813c67228>:0x00007f9813c65310>):
+     6:         <%= form_for(@user, url:password_reset_path(params[:id])) do |f| %>
+     7:             <%= render 'shared/error_messages' %>
+     8: 
+     9:             <%= hidden_field_tag :email, @user/email %>
+    10: 
+    11:             <%= f.label :password %>
+    12:             <%= f.pasword_field :password, class: 'form-control' %>
+  
+app/views/password_resets/edit.html.erb:9:in `block in _app_views_password_resets_edit_html_erb___371523474239264052_70145571765720'
+app/views/password_resets/edit.html.erb:6:in `_app_views_password_resets_edit_html_erb___371523474239264052_70145571765720'
+Started GET "/password_resets/rN_rgzp_--N-ZSq_Ttu9uQ/edit?email=nogizaka46%40example.com" for ::1 at 2019-04-09 22:17:24 +0900
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"nogizaka46@example.com", "id"=>"rN_rgzp_--N-ZSq_Ttu9uQ"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:27
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered password_resets/edit.html.erb within layouts/application (338.9ms)
+Completed 500 Internal Server Error in 415ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `pasword_field' for #<ActionView::Helpers::FormBuilder:0x00007f9812f9cc50>
+Did you mean?  password_field):
+     9:             <%= hidden_field_tag :email, @user.email %>
+    10: 
+    11:             <%= f.label :password %>
+    12:             <%= f.pasword_field :password, class: 'form-control' %>
+    13: 
+    14:             <%= f.label :password_confirmation, "Confirmation" %>
+    15:             <%= f.pasword_field :password_confirmation, class: 'form-control' %>
+  
+app/views/password_resets/edit.html.erb:12:in `block in _app_views_password_resets_edit_html_erb___371523474239264052_70145565009920'
+app/views/password_resets/edit.html.erb:6:in `_app_views_password_resets_edit_html_erb___371523474239264052_70145565009920'
+Started GET "/password_resets/rN_rgzp_--N-ZSq_Ttu9uQ/edit?email=nogizaka46%40example.com" for ::1 at 2019-04-09 22:17:48 +0900
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"nogizaka46@example.com", "id"=>"rN_rgzp_--N-ZSq_Ttu9uQ"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:27
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered password_resets/edit.html.erb within layouts/application (206.7ms)
+Completed 500 Internal Server Error in 309ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `pasword_field' for #<ActionView::Helpers::FormBuilder:0x00007f9817b4f288>
+Did you mean?  password_field):
+     9:             <%= hidden_field_tag :email, @user.email %>
+    10: 
+    11:             <%= f.label :password %>
+    12:             <%= f.pasword_field :password, class: 'form-control' %>
+    13: 
+    14:             <%= f.label :password_confirmation, "Confirmation" %>
+    15:             <%= f.pasword_field :password_confirmation, class: 'form-control' %>
+  
+app/views/password_resets/edit.html.erb:12:in `block in _app_views_password_resets_edit_html_erb___371523474239264052_70145607764580'
+app/views/password_resets/edit.html.erb:6:in `_app_views_password_resets_edit_html_erb___371523474239264052_70145607764580'
+Started GET "/password_resets/rN_rgzp_--N-ZSq_Ttu9uQ/edit?email=nogizaka46%40example.com" for ::1 at 2019-04-09 22:17:54 +0900
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"nogizaka46@example.com", "id"=>"rN_rgzp_--N-ZSq_Ttu9uQ"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:27
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered password_resets/edit.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (78.9ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 174ms (Views: 96.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/password_resets/rN_rgzp_--N-ZSq_Ttu9uQ" for ::1 at 2019-04-09 22:18:56 +0900
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for PasswordResetsController):
+  
+vendor/bundle/gems/actionpack-5.2.3/lib/abstract_controller/base.rb:129:in `process'
+vendor/bundle/gems/actionview-5.2.3/lib/action_view/rendering.rb:32:in `process'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_controller/metal.rb:191:in `dispatch'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_controller/metal.rb:252:in `dispatch'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:34:in `serve'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:52:in `block in serve'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `each'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `serve'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:840:in `call'
+vendor/bundle/gems/rack-2.0.7/lib/rack/tempfile_reaper.rb:15:in `call'
+vendor/bundle/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+vendor/bundle/gems/rack-2.0.7/lib/rack/conditional_get.rb:38:in `call'
+vendor/bundle/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+vendor/bundle/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:232:in `context'
+vendor/bundle/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:226:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/cookies.rb:670:in `call'
+vendor/bundle/gems/activerecord-5.2.3/lib/active_record/migration.rb:559:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+vendor/bundle/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:98:in `run_callbacks'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+vendor/bundle/gems/web-console-3.7.0/lib/web_console/middleware.rb:135:in `call_app'
+vendor/bundle/gems/web-console-3.7.0/lib/web_console/middleware.rb:30:in `block in call'
+vendor/bundle/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `catch'
+vendor/bundle/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+vendor/bundle/gems/railties-5.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+vendor/bundle/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `block in call'
+vendor/bundle/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+vendor/bundle/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+vendor/bundle/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+vendor/bundle/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `call'
+vendor/bundle/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+vendor/bundle/gems/rack-2.0.7/lib/rack/method_override.rb:22:in `call'
+vendor/bundle/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/gems/activesupport-5.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+vendor/bundle/gems/actionpack-5.2.3/lib/action_dispatch/middleware/static.rb:127:in `call'
+vendor/bundle/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/gems/railties-5.2.3/lib/rails/engine.rb:524:in `call'
+vendor/bundle/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/password_resets/rN_rgzp_--N-ZSq_Ttu9uQ" for ::1 at 2019-04-09 22:29:20 +0900
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eN2lbHkMqRO/OW6TCPApqtZVSyl7N9bNCeg+ap2y2aYbvWvyhVzOnWu+KTGBYc3GCAJwTiq4bHQVkwk8eZ/VBA==", "email"=>"nogizaka46@example.com", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update password", "id"=>"rN_rgzp_--N-ZSq_Ttu9uQ"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/password_resets_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["id", 101], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:29
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$nLkjnSlS8tEWpkoZJ19yb.ewupsbu0fhtOd2SEb754KZ2MAA81mme"], ["updated_at", "2019-04-09 13:29:20.494686"], ["id", 101]]
+  ↳ app/controllers/password_resets_controller.rb:29
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/password_resets_controller.rb:29
+Redirected to http://localhost:3000/users/101
+Completed 302 Found in 198ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/users/101" for ::1 at 2019-04-09 22:29:20 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (53.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 71ms (Views: 67.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-04-09 22:30:04 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eLORMMZHriUDoQH0Iz48KWCWgBpbR4ukouU+2gAKZk8b01+uOhfJq9cmRlaqr9hFvsG7fQrIMR2+ngmM5Cdq7Q=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-04-09 22:30:04 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (61.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 79ms (Views: 75.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-04-09 22:30:05 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_head.html.erb (42.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 74ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-04-09 22:30:17 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MJCxJumJdzSiQIH/8hZoV1igDeH5/wya8Fh3ga7YmHn2JumEqsN8mOF19UQhWcQUOjIv+2gzJopFJMKgosDFtQ==", "session"=>{"email"=>"nogizaka46@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nogizaka46@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/users
+Completed 302 Found in 79ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2019-04-09 22:30:18 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."activated" = ?[0m  [["activated", 1]]
+  ↳ app/views/users/index.html.erb:6
+  Rendered collection of users/_user.html.erb [101 times] (12.0ms)
+  Rendered users/index.html.erb within layouts/application (18.9ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_head.html.erb (38.7ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 76ms (Views: 68.9ms | ActiveRecord: 2.5ms)
+
+
